@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { DateCountPipe } from './date-count.pipe';
 import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,    
-    UserprofileComponent, DateCountPipe, AboutComponent,
+    UserprofileComponent, DateCountPipe, AboutComponent, NavbarComponent,
     
   ],
   imports: [
