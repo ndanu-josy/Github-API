@@ -47,9 +47,9 @@ export class UserprofileComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.searchUserName('Josphine-Ndanu');
+    this.searchUserName('ndanu-josy');
 
-  this.reposService.getRepoInfo('Josphine-Ndanu').subscribe((response) => {
+  this.reposService.getRepoInfo('ndanu-josy').subscribe((response) => {
     console.log(response)
     this.repos=response
   })

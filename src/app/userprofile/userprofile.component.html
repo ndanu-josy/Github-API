@@ -1,23 +1,34 @@
 <div class="container">
+  
   <div class="card" *ngFor="let profile of profiles">
     <div class="card-title">
-   
+
     </div>
     <div class="card-body">
       <div class="row">
         <div class="col-md-6">
-          <img src="{{ profile.avatar_url }}" class="card-img img-fluid" alt="avatar" style="width:100%; height:100%;">
+          <img src="{{ profile.avatar_url }}" class="card-img img-fluid" alt="avatar" style=" height:400px; width:400px">
         </div>
         <div class="col-md-6">
-            <P><strong>Username:</strong> {{profile.login}}</P>
+          <P><strong>Username:</strong> {{profile.login}}</P>
           <p><strong>followers:</strong> {{profile.followers}}</p>
           <p><strong>following:</strong> {{profile.following}}</p>
           <p><strong>Public Repos:</strong> {{profile.public_repos}}</p>
+
+
         </div>
       </div>
 
     </div>
   </div>
-</div>
 
-<p *ngFor="let repo of repos; index as i"> My name is {{repo.description}}</p>
+</div>
+<div class=container>
+  <h3>Repositories</h3>
+  <div class="card" *ngFor="let repo of repos; index as i">
+    <P><strong>{{repo.name}}</strong> </P>
+    <p>{{repo.description}}</p>
+    <p><strong>Languages: </strong>{{repo.language}}</p>
+  </div>
+
+</div>
