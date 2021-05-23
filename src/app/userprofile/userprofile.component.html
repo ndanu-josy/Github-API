@@ -9,6 +9,11 @@
       </div>
     </div>
   </div>
+
+  <div *ngIf="notFound && !username" class="mx-auto">
+    <h2 class="text-center">sorry, user not found <i class="far fa-frown fa-lg"></i></h2>
+  </div>
+
   
   <div class="card" *ngFor="let profile of profiles">
     <div class="card-title">
@@ -24,8 +29,7 @@
           <p><strong>followers:</strong> {{profile.followers}}</p>
           <p><strong>following:</strong> {{profile.following}}</p>
           <p><strong>Public Repos:</strong> {{profile.public_repos}}</p>
-
-
+          <p><strong>Created at:</strong> {{profile.created_at| date}}</p>
         </div>
       </div>
 
@@ -38,7 +42,8 @@
   <div class="card" *ngFor="let repo of repos; index as i">
     <P><strong>{{repo.name}}</strong> </P>
     <p>{{repo.description}}</p>
-    <p><strong>Languages: </strong>{{repo.language}}</p>
+    <p><strong>Language: </strong>{{repo.language}}</p>
+    <p><strong>Updated on: </strong>{{repo.updated_at | date}}</p>
   </div>
 
 </div>

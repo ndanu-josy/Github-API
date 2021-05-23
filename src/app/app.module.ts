@@ -4,14 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
-import { RepositoriesComponent } from './repositories/repositories.component';
+// import { RepositoriesComponent } from './repositories/repositories.component';
 import { SearchComponent } from './search/search.component';
+import { DateCountPipe } from './date-count.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,    
-    UserprofileComponent, RepositoriesComponent, SearchComponent,
+    UserprofileComponent, SearchComponent, DateCountPipe,
     
   ],
   imports: [

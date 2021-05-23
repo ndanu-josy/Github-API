@@ -12,6 +12,7 @@ import { ReposService } from '../repos.service';
 export class UserprofileComponent implements OnInit {
   profiles!: Profiles[];
   repos!: Repos[];
+  notFound!: boolean;
 
   constructor(
     private githubService: GithubService,
@@ -58,6 +59,10 @@ export class UserprofileComponent implements OnInit {
     this.searchUserName(username);
      this.reposService.getRepoInfo(username).subscribe((response) => {
        this.repos= response;
-     });
+     },error => {
+      this.notFound = !this.notFound;
+    });
+ 
+     
   }
 }
