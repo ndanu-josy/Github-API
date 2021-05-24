@@ -3,6 +3,7 @@ import { GithubService } from '../github.service';
 import { Profiles } from '../classes/profiles';
 import { Repos } from '../classes/repos';
 import { ReposService } from '../repos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userprofile',
@@ -16,7 +17,8 @@ export class UserprofileComponent implements OnInit {
 
   constructor(
     private githubService: GithubService,
-    private reposService: ReposService
+    private reposService: ReposService,
+    private router: Router
   ) {}
 
   searchUserName(username: string) {
@@ -26,27 +28,19 @@ export class UserprofileComponent implements OnInit {
         console.log(this.profiles);
       },
       (error: any) => {
-        console.log(error);
+        // this.notFound = !this.notFound;
+       alert("Sorry, User not found");
       }
     );
   }
 
-  //  displayRepos(username: any){
-  //    this.reposService. displayRepos(username).then(
-  //      ()=>{
-  //        this.repos=this.reposService.repos;
-  //        console.log(this.repos);
-  //     },
-  //     (error: any)=>{
-  //       console.log(error)
-  //     }
-  //   )
-  //  }
+ 
 
   ngOnInit(): void {
-    this.searchUserName('ndanu-josy');
+    this.router.navigate([''])
+    this.searchUserName('Josphine-Ndanu');
 
-    this.reposService.getRepoInfo('ndanu-josy').subscribe((response) => {
+    this.reposService.getRepoInfo('Josphine-Ndanu').subscribe((response) => {
       console.log(response);
       this.repos = response;
     });

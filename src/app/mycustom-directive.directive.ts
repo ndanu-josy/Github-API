@@ -8,7 +8,7 @@ export class MycustomDirectiveDirective {
   constructor(private el: ElementRef) { }
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.highlight('teal');
+    this.highlight('#fca311');
   }
 
   @HostListener('mouseleave') onMouseLeave() {

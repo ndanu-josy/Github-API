@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 import { Profiles } from './classes/profiles';
 
 
@@ -27,9 +27,12 @@ export class GithubService {
     }
     let searchEndpoint =
       'https://api.github.com/users/' +
-      username +
-      '?access_token=' +
-      environment.api_key;
+      username
+    // let searchEndpoint =
+    //   'https://api.github.com/users/' +
+    //   username +
+    //   '?access_token=' +
+    //   environment.api_key;
     let promise = new Promise<void>((resolve, reject) => {
       this.profiles = [];
       this.http

@@ -1,5 +1,20 @@
 # GithubApi
 
+
+## Author
+Josphine Ndanu
+
+## Description
+This a Github Api that enables users to search for users and their repositories 
+
+## Technologies used 
+
+1. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
+2. HTML 
+3. css 
+4. Typescript
+5. Javascript
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
 
 ## Development server

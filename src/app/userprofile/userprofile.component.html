@@ -1,30 +1,38 @@
 <div class="container">
-  <div class="container h-100 ">
-    <div class="d-flex justify-content-center h-100">
-      <div class="searchbar">
-        <input type="text" class="search_input" name="username" placeholder="Search the Username here..." #username    > 
-        <a class="search_icon" (click)="search(username.value)">   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-        </svg></a>
-      </div>
+
+
+  <div class="input-group mb-3" style="margin:30px">
+    <input type="text" class="form-control search_input" placeholder="Github username" name="username"
+      aria-describedby="basic-addon2" #username>
+    <div class="input-group-append">
+      <button id="search-button" type="button" class="btn btn-primary" (click)="search(username.value)" appMycustomDirective >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+          viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg> Search
+
+      </button>
     </div>
   </div>
-
-  <div *ngIf="notFound && !username" class="mx-auto">
+<!-- 
+  <div *ngIf="notFound&&!username" class="mx-auto">
     <h2 class="text-center">sorry, user not found <i class="far fa-frown fa-lg"></i></h2>
-  </div>
-
-  
-  <div class="card" *ngFor="let profile of profiles">
+  </div> -->
+  <hr>
+  <h1 class="text-center" style="margin:20px">User Profile</h1>
+ 
+  <div class="" *ngFor="let profile of profiles">
     <div class="card-title">
 
     </div>
     <div class="card-body">
       <div class="row">
-        <div class="col-md-6">
-          <img src="{{ profile.avatar_url }}" class="card-img img-fluid" alt="avatar" style=" height:400px; width:400px">
+        <div class="col">
+          <img src="{{ profile.avatar_url }}" class="card-img img-fluid" alt="avatar"
+            style=" height:400px; width:400px">
         </div>
-        <div class="col-md-6" appMycustomDirective>
+        <div class="col" >
           <P><strong>Username:</strong> {{profile.login}}</P>
           <p><strong>followers:</strong> {{profile.followers}}</p>
           <p><strong>following:</strong> {{profile.following}}</p>
@@ -38,12 +46,36 @@
 
 </div>
 <div class=container>
-  <h3>Repositories</h3>
-  <div class="card" *ngFor="let repo of repos; index as i">
-    <P><strong>{{repo.name}}</strong> </P>
-    <p>{{repo.description}}</p>
-    <p><strong>Language: </strong>{{repo.language}}</p>
-    <p><strong>Updated on: </strong>{{repo.updated_at | date}}</p>
+  <hr>
+  <h1 class="text-center">Repositories</h1>
+ 
+
+  <div class="row justify-content-center">
+    <div class="card  p-1 mb-3 col-md-8" *ngFor="let repo of repos; index as i">
+      <div class="card-title">
+        <P><strong>{{repo.name}}</strong> </P>
+      </div>
+      <div class=card-body>
+        <p>{{repo.description}}</p>
+        <p><strong>Language: </strong>{{repo.language}}</p>
+      </div>
+      <div class="row" >
+        <div class=col>
+          <p><strong>Updated on: </strong>{{repo.updated_at | date}}</p>
+        </div>
+        <div class=col>
+          <a href="{{ repo.html_url }}" target="_blank">
+            <button style="color:white;" class="btn btn-primary" appMycustomDirective>view Repo
+                </button>
+          </a>
+        </div>
+
+
+      </div>
+
+    </div>
+
   </div>
+
 
 </div>
